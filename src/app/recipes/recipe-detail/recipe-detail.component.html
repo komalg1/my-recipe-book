@@ -1,0 +1,34 @@
+<h1>Recipe Details</h1>
+<div class="row">
+  <div class="col-xs-12">
+    <img src="{{selectedRecipe.recipe.image_url}}" alt="" class="img-responsive img-rounded">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>{{selectedRecipe.recipe.title}}</h2>
+    <span class="">By {{selectedRecipe.recipe.publisher}}</span>
+  </div>
+  <div class="col-xs-12">
+      <hr>
+    <button class="btn btn-success" (click)="addToShoppingList()" data-toggle="tooltip" title="Add to shopping list"><span class="glyphicon glyphicon-plus"></span> Shopping List</button>
+    <div *ngIf="addedToCart" class="alert alert-success box-msg" role="alert">
+      <strong>Items added to Shopping List</strong>
+</div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12 col-lg-8">
+    <p [innerHTML]="selectedRecipe.recipe.publisher"></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-10 col-lg-6">
+    <h3>Ingredients</h3>
+    <ul class="list-group ingredient-list">
+      <!-- Add all ingredients in array to list -->
+      <li class="list-group-item ingredient" *ngFor="let item of selectedRecipe.recipe.ingredients">{{item}}</li>
+    </ul>
+  </div>
+</div>

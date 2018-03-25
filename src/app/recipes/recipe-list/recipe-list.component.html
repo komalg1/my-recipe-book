@@ -1,0 +1,29 @@
+<div class="row">
+</div>
+<div id="search-component" class="form-group">
+  
+  <h4><label>Recipe Search</label></h4>
+  <!-- <div class="col-md-6"> -->
+  <input #searchBox id="search-box" class="col-md-3" (keyup.enter)="searchRecipesByIngredients(searchBox.value)" style="width: 36%;border-radius: 5px;border: 2px solid;height: 35px;"/>
+
+  <button type="button" class="btn btn-info col-md-1" (click)="searchRecipesByIngredients(searchBox.value)">
+    <span class="glyphicon glyphicon-search"></span>
+  </button>
+<!-- </div> -->
+<!-- <div class="col-md-6"> -->
+    <button type="button" class="btn btn-info btn-md" style="float:right" (click)="getTrendingRecipes()">
+        <span class="glyphicon glyphicon-sort"></span> Get Trending Recipes
+    </button>
+<!-- </div> -->
+
+</div>
+<div class="row">
+  <div class="col-xs-12" style="margin-top:2%">
+      <div *ngIf="recipes.recipes?.length==0" class="alert alert-success box-msg" role="alert">
+          <strong>No Recipes found! Try something else!</strong></div>
+    <ul class="list-group">
+
+      <app-recipe-item *ngFor="let recipe of recipes.recipes; let i = index" [recipe]="recipe" [recipeId]="recipe.recipe_id"></app-recipe-item>
+    </ul>
+  </div>
+</div>

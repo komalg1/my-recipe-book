@@ -1,0 +1,15 @@
+.nav-item {
+    font-size: 18px;
+  }
+  
+  .nav-dropdown-item {
+    font-size: 16px;
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
